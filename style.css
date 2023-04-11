@@ -2,10 +2,11 @@
     margin: 20px auto;
     width: 400px;
     font-family: sans-serif;
+    display: inline-block;
 }
 
 .meme-generator label{
-    display: inline-block;
+    display: block;
     font-weight: bold;
     margin-bottom: 10px;
 }
