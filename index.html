@@ -1,34 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meme Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Memes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/meme-generator.png">
 </head>
 <body>
-    <div class="machine">
-        <div class="meme-generator">
-            <h1>Meme Generator</h1>
-            <label>Select an Image</label>
-            <input type="file" id="imageFileInput">
+    <main>
+        <div class="container">
+            <div class="meme-generator">
+                <h1>🎨 Editor de Memes</h1>
+                
+                <!-- Seção de Upload de Imagem -->
+                <div class="section">
+                    <label for="imageFileInput">📷 Selecione uma Imagem</label>
+                    <input type="file" id="imageFileInput" accept="image/*">
+                </div>
 
-            <label>Topo Text</label>
-            <input type="text" id="topTextInput">
+                <!-- Controles de Tamanho da Imagem -->
+                <div class="section" id="imageSizeControls" style="display: none;">
+                    <label for="imageWidth">Largura da Imagem (px)</label>
+                    <input type="number" id="imageWidth" min="100" max="2000" value="800">
+                    <label for="imageHeight">Altura da Imagem (px)</label>
+                    <input type="number" id="imageHeight" min="100" max="2000" value="600">
+                </div>
 
-            <label>Bottom Text</label>
-            <input type="text" id="bottomTextInput">
+                <!-- Área do Canvas -->
+                <div class="canvas-container">
+                    <canvas id="meme"></canvas>
+                    <div id="textOverlays"></div>
+                </div>
 
-            <canvas id="meme"></canvas>
+                <!-- Controles de Textos -->
+                <div class="section" id="textControls" style="display: none;">
+                    <div class="controls-header">
+                        <h3>Textos do Meme</h3>
+                        <button id="addTextBtn" class="btn btn-primary">+ Adicionar Texto</button>
+                    </div>
+                    <div id="textList"></div>
+                </div>
+
+                <!-- Botão de Download -->
+                <div class="section" id="downloadSection" style="display: none;">
+                    <button id="downloadBtn" class="btn btn-download">💾 Baixar Meme</button>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="roda">
-        <h4>Made and programmed by Esteves_gss</h4>
-    </div>
-    
+        <div id="roda">
+            <h4>Made and programmed by Esteves_gss</h4>
+        </div>
+    </main>
+
     <script src="main.js"></script>
-    
-
 </body>
 </html>
